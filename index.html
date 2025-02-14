@@ -20,18 +20,20 @@
         }
         .container {
             display: flex;
+            flex-direction: column;
             align-items: center;
-            max-width: 80%;
-        }
-        .text-content {
-            flex: 1;
-            text-align: left;
+            text-align: center;
+            max-width: 90%;
             padding: 20px;
         }
+        .text-content {
+            text-align: center;
+            padding: 10px;
+        }
         .image-content {
-            flex: 1;
             display: flex;
             justify-content: center;
+            margin-top: 10px;
         }
         .image-content img {
             max-width: 100%;
@@ -39,7 +41,7 @@
             border-radius: 10px;
             border: 10px solid red;
             padding: 10px;
-            background: url('mio.jpg') center/cover no-repeat;
+            background: url('https://i.imgur.com/1zq6y6P.png') center/cover no-repeat;
         }
         .heart {
             font-size: 50px;
@@ -50,7 +52,7 @@
             100% { transform: scale(1.2); }
         }
         .message {
-            font-size: 20px;
+            font-size: 18px;
             margin: 20px 0;
         }
         .button {
@@ -60,7 +62,7 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            font-size: 18px;
+            font-size: 16px;
         }
         .heart-float {
             position: absolute;
@@ -72,29 +74,39 @@
             0% { transform: translateY(0); opacity: 1; }
             100% { transform: translateY(-200px); opacity: 0; }
         }
+        @media (min-width: 768px) {
+            .container {
+                flex-direction: row;
+                text-align: left;
+                max-width: 80%;
+            }
+            .text-content {
+                flex: 1;
+            }
+            .image-content {
+                flex: 1;
+            }
+        }
     </style>
 </head>
 <body>
- <audio autoplay loop>
-    <source src="https://docs.google.com/uc?export=download&id=1mcuk3uvWH4LsyzrGO-9E9adJjdOabE6a" type="audio/mpeg">
-    Tu navegador no soporta el audio.
-</audio>
-
+    <audio autoplay loop>
+        <source src="https://www.mfiles.co.uk/mp3-downloads/when-you-kiss-me.mp3" type="audio/mpeg">
+        </audio>
     <div class="container">
         <div class="text-content">
-            <h1>💖 Feliz San Valentín, mi amor 💖</h1>
+            <h1>💖 Feliz San Valentín, mi Amor 💖</h1>
             <div class="heart">❤️</div>
             <p class="message">Te quiero muchísimo. 💕</p>
-            <button class="button" onclick="mostrarSorpresa()">Toca Aqui mi Puerquito hermoso</button>
+            <button class="button" onclick="mostrarSorpresa()">Toca Aqui mi Puerquito Hermoso</button>
             <div id="sorpresa" style="display: none; font-size: 16px;color: forestgreen; font-weight: bold;">
-                <p>Mañana es 14 de febrero, bueno hoy, pero para mí, cada día a tu lado es especial. No necesito una fecha en el calendario para recordarte lo mucho que significas para mí. Me encanta compartir momentos contigo, esas salidas en las que no siempre compramos algo, pero nos llevamos risas, conversaciones y recuerdos.  💘</p>
-                <p>Gracias por ser mi compañera jejee bueno tal vez mañana no salgamos a comer o no hacemos algo grande pero, cada momento a tu lado es especial, sin importar el lugar o el plan. Me encanta compartir tiempo contigo, nuestras conversaciones, nuestras risas y simplemente disfrutar de tu compañía. No sé qué nos depara el futuro, pero sé que quiero seguir construyéndolo contigo.💖</p>
-                <p>Feliz San Valentín, mi amor. Te quiero. Te Amuuuu!!!💘</p>
+                <p>💘 Mañana es 14 de febrero, bueno hoy, pero para mí, cada día a tu lado es especial. No necesito una fecha en el calendario para recordarte lo mucho que significas para mí. Me encanta compartir momentos contigo, esas salidas en las que no siempre compramos algo, pero nos llevamos risas, conversaciones y recuerdos.  </p>
+                <p>💘 Gracias por ser mi compañera jejee bueno tal vez mañana no salgamos a comer o no hacemos algo grande pero, cada momento a tu lado es especial, sin importar el lugar o el plan. Me encanta compartir tiempo contigo, nuestras conversaciones, nuestras risas y simplemente disfrutar de tu compañía. No sé qué nos depara el futuro, pero sé que quiero seguir construyéndolo contigo.</p>
+                <p>💘 Feliz San Valentín, mi amor. Te quiero. Te Amuuuu!!!</p>
             </div>
-         
         </div>
         <div class="image-content">
-            <img src="mio.jpg" alt="San Valentín">
+            <img src="tu-imagen.jpg" alt="San Valentín">
         </div>
     </div>
     <script>
@@ -117,4 +129,3 @@
     </script>
 </body>
 </html>
-

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz San Valentín</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #ffebee;
+            color: #d32f2f;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            margin-top: 50px;
+        }
+        .heart {
+            font-size: 50px;
+            animation: heartbeat 1s infinite alternate;
+        }
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.2); }
+        }
+        .message {
+            font-size: 20px;
+            margin: 20px;
+        }
+        .button {
+            background-color: #d32f2f;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>💖 Feliz San Valentín, mi amor 💖</h1>
+    <div class="heart">❤️</div>
+    <p class="message">Eres lo mejor que me ha pasado y cada día a tu lado es especial. Te quiero muchísimo. 💕</p>
+    <button class="button" onclick="mostrarSorpresa()">Haz clic aquí</button>
+    <p id="sorpresa" style="display: none; font-size: 22px; font-weight: bold;">¡Eres la persona más increíble del mundo! 💘</p>
+
+    <script>
+        function mostrarSorpresa() {
+            document.getElementById("sorpresa").style.display = "block";
+        }
+    </script>
+</body>
+</html>

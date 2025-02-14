@@ -7,16 +7,39 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            text-align: center;
             background-color: #ffebee;
             color: #d32f2f;
             margin: 0;
             padding: 0;
-            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
             overflow: hidden;
+            position: relative;
         }
-        h1 {
-            margin-top: 50px;
+        .container {
+            display: flex;
+            align-items: center;
+            max-width: 80%;
+        }
+        .text-content {
+            flex: 1;
+            text-align: left;
+            padding: 20px;
+        }
+        .image-content {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+        .image-content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            border: 10px solid red;
+            padding: 10px;
+            background: url('https://i.imgur.com/1zq6y6P.png') center/cover no-repeat;
         }
         .heart {
             font-size: 50px;
@@ -28,7 +51,7 @@
         }
         .message {
             font-size: 20px;
-            margin: 20px;
+            margin: 20px 0;
         }
         .button {
             background-color: #d32f2f;
@@ -38,18 +61,6 @@
             border-radius: 5px;
             cursor: pointer;
             font-size: 18px;
-            margin-top: 20px;
-        }
-        .background {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: auto;
-            height: auto;
-            max-width: 80%;
-            max-height: 80%;
-            z-index: -1;
         }
         .heart-float {
             position: absolute;
@@ -64,13 +75,22 @@
     </style>
 </head>
 <body>
-    <img class="background" src="https://raw.github.com/NessEvil/Ness/main/mio.jpg" alt="Fondo San Valentín">
-    <h1>💖 Feliz San Valentín, mi amor 💖</h1>
-    <div class="heart">❤️</div>
-    <p class="message">Eres lo mejor que me ha pasado y cada día a tu lado es especial. Te quiero muchísimo. 💕</p>
-    <button class="button" onclick="mostrarSorpresa()">Haz clic aquí</button>
-    <p id="sorpresa" style="display: none; font-size: 22px; font-weight: bold;">¡Eres la persona más increíble del mundo! 💘</p>
-
+    <audio autoplay loop>
+        <source src="tu-cancion.mp3" type="audio/mpeg">
+        Tu navegador no soporta el audio.
+    </audio>
+    <div class="container">
+        <div class="text-content">
+            <h1>💖 Feliz San Valentín, mi amor 💖</h1>
+            <div class="heart">❤️</div>
+            <p class="message">Eres lo mejor que me ha pasado y cada día a tu lado es especial. Te quiero muchísimo. 💕</p>
+            <button class="button" onclick="mostrarSorpresa()">Haz clic aquí</button>
+            <p id="sorpresa" style="display: none; font-size: 22px; font-weight: bold;">¡Eres la persona más increíble del mundo! 💘</p>
+        </div>
+        <div class="image-content">
+            <img src="tu-imagen.jpg" alt="San Valentín">
+        </div>
+    </div>
     <script>
         function mostrarSorpresa() {
             document.getElementById("sorpresa").style.display = "block";
@@ -91,3 +111,4 @@
     </script>
 </body>
 </html>
+

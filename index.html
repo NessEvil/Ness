@@ -12,6 +12,8 @@
             color: #d32f2f;
             margin: 0;
             padding: 0;
+            position: relative;
+            overflow: hidden;
         }
         h1 {
             margin-top: 50px;
@@ -38,9 +40,29 @@
             font-size: 18px;
             margin-top: 20px;
         }
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: url('tu-imagen.jpg') center/cover no-repeat;
+        }
+        .heart-float {
+            position: absolute;
+            color: red;
+            font-size: 30px;
+            animation: float 5s infinite ease-in-out;
+        }
+        @keyframes float {
+            0% { transform: translateY(0); opacity: 1; }
+            100% { transform: translateY(-200px); opacity: 0; }
+        }
     </style>
 </head>
 <body>
+    <div class="background"></div>
     <h1>💖 Feliz San Valentín, mi amor 💖</h1>
     <div class="heart">❤️</div>
     <p class="message">Eres lo mejor que me ha pasado y cada día a tu lado es especial. Te quiero muchísimo. 💕</p>
@@ -51,6 +73,19 @@
         function mostrarSorpresa() {
             document.getElementById("sorpresa").style.display = "block";
         }
+        function crearCorazones() {
+            for (let i = 0; i < 10; i++) {
+                let heart = document.createElement("div");
+                heart.classList.add("heart-float");
+                heart.innerHTML = "❤️";
+                heart.style.left = Math.random() * window.innerWidth + "px";
+                heart.style.top = window.innerHeight + "px";
+                heart.style.animationDuration = (Math.random() * 3 + 2) + "s";
+                document.body.appendChild(heart);
+                setTimeout(() => heart.remove(), 5000);
+            }
+        }
+        setInterval(crearCorazones, 1000);
     </script>
 </body>
 </html>
